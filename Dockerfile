@@ -7,7 +7,8 @@ ENV PATH $TOOLCHAIN/bin:$PATH
 
 # Install toolchain
 WORKDIR /root
-RUN apt install --quiet -y wget unzip && \
+RUN apt update && \
+    apt install --quiet -y wget unzip && \
     rm -rf /var/cache/apk/*
 
 RUN wget --quiet https://dl.google.com/android/repository/android-ndk-r14b-linux-x86_64.zip && \
