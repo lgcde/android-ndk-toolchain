@@ -18,11 +18,11 @@ RUN apt-get update && \
 
 RUN curl -L -O https://dl.google.com/android/repository/android-ndk-$NDK_VERSION-linux-x86_64.zip && \
     unzip -q android-ndk-$NDK_VERSION-linux-x86_64.zip && \
-    rm android-ndk-$NDK_VERSION-linux-x86_64.zip \
+    rm android-ndk-$NDK_VERSION-linux-x86_64.zip && \
     mkdir -p $ANDROID_HOME/toolchain && \
     $ANDROID_HOME/android-ndk-$NDK_VERSION/build/tools/make-standalone-toolchain.sh \
         --install-dir=$ANDROID_HOME/toolchain \
         --toolchain=arm-linux-androideabi-4.9 \
         --force && \
-    rm -r android-ndk-r14b
+    rm -r android-ndk-$NDK_VERSION
 
