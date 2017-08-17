@@ -5,7 +5,4 @@ RUN mkdir -p $ANDROID_HOME/toolchain && \
     $ANDROID_HOME/android-ndk-$NDK_VERSION/build/tools/make-standalone-toolchain.sh \
         --install-dir=$ANDROID_HOME/toolchain \
         --toolchain=arm-linux-androideabi-4.9 \
-        --force && \
-    rm -r android-ndk-r14b
-
-
+        --force
